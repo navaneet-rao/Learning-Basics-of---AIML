@@ -1,5 +1,5 @@
 import cv2
-image = cv2.imread('../../images/Goldfinch.jpg')
+image = cv2.imread('../../images/NoisyButterFly.png')
 
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -10,7 +10,7 @@ _, binary_image = cv2.threshold(
 # Invert the binary image to have white background
 binary_image = cv2.bitwise_not(binary_image)
 
-image_blur = cv2.GaussianBlur(binary_image, (35, 35), 0)
+image_blur = cv2.GaussianBlur(binary_image, (45, 45), 0)
 
 cv2.imwrite("../../images/binary.jpeg", binary_image)
 cv2.imwrite('../../images/MonochromeBlurred.jpg', image_blur)
